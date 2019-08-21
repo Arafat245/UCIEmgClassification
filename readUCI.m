@@ -41,19 +41,19 @@ for j=1:sub
                 end
                 temp_data = t1.(field);
                 t2 = temp_data;
-                %t = zeros(3,250);
+                t = zeros(3,1000);
                 
-%                 for a=1:250:size(t2,2)     
-%                     b=a+249;
-%                     win = t2(:,a:b);
-%                     if t == 0
-%                        t = win;
-%                     else
-%                        t = [t;win];
-%                     end
-%                 end
+                for a=1:500:size(t2,2)     
+                    b=a+499;
+                    win = t2(:,a:b);
+                    if t == 0
+                       t = win;
+                    else
+                       t = [t;win];
+                    end
+                end
                 
-            bf = filter(f,t2);
+            bf = filter(f,t);
             ft = filter(notch,bf);
         
             l(1:size(ft,1),1) = lvalue(m);
